@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int majority[] = {1, 2, 2, 1, 1, 1};
+    int n = sizeof(majority) / sizeof(majority[0]); // Calculate the size of the array
+
+    int count1 = 0, count2 = 0; // Initialize counts for two unique elements (1 and 2)
+
+    // Count occurrences of 1 and 2
+    for (int i = 0; i < n; i++) {
+        if (majority[i] == 1) {
+            count1++;
+        } else if (majority[i] == 2) {
+            count2++;
+        }
+    }
+
+    // Print the counts and determine the majority
+    printf("Count of majority 1 is = %d\n", count1);
+    printf("Count of majority 2  is = %d\n", count2);
+
+    if (count1 > count2) {
+        printf("Majority element is: 1\n");
+    } else if (count2 > count1) {
+        printf("Majority element is: 2\n");
+    } else {
+        printf("No majority element\n");
+    }
+
+    return 0;
+}
